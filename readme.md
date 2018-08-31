@@ -38,10 +38,10 @@ const hash = {
     '<>': 'Op.n'
 };
 
-appendToAllAttributes(original_object, hash);
-
+const resulting_object = appendToAllAttributes(original_object, hash);
+console.log(resulting_object);
 //=>
-const resulting_object = {
+{
     'Op.gt': 23,
     'Op.and': {
         'Op.gt': 44,
