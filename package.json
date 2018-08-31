@@ -1,0 +1,14 @@
+{
+    "name": "change-name-of-all-keys",
+    "version": "1.0.0",
+    "description": "Change names of all keys and subkeys given a hash table",
+    "main": "index.js",
+    "scripts": {
+        "test": "ava"
+    },
+    "author": "Fabio Espinosa",
+    "license": "MIT",
+    "devDependencies": {
+        "ava": "^0.25.0"
+    }
+}
