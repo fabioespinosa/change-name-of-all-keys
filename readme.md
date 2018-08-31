@@ -1,6 +1,6 @@
 # change-name-of-all-keys
 
-> Change name the key of all attributes of an object given a hash, children as well (handy utility)
+> Change the key name of all attributes of an object given a hash, children as well (handy utility)
 
 ## Install
 
