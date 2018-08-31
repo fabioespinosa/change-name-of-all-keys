@@ -4,7 +4,11 @@ module.exports = (object, hash_table) => {
         const new_key = hash_table[key];
         if (val !== null && typeof val === 'object') {
             // If value is an object, call recursively
-            new_object[new_key] = module.exports(val, hash_table);
+            if (typeof new_key !== 'undefined') {
+                new_object[new_key] = module.exports(val, hash_table);
+            } else {
+                new_object[key] = module.exports(val, hash_table);
+            }
         } else {
             if (new_key) {
                 new_object[new_key] = val;

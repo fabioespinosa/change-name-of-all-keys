@@ -1,6 +1,6 @@
 {
     "name": "change-name-of-all-keys",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Change names of all keys and subkeys given a hash table",
     "main": "index.js",
     "scripts": {
