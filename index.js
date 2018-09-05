@@ -1,22 +1,16 @@
 module.exports = (object, hash_table) => {
-    const new_object = {};
+    let new_object = {};
+    if (Array.isArray(object)) {
+        new_object = [];
+    }
     for (const [key, val] of Object.entries(object)) {
         const new_key = hash_table[key];
         if (val !== null && typeof val === 'object') {
             // If value is an object, call recursively
-
             if (typeof new_key !== 'undefined') {
-                if (Array.isArray(val)) {
-                    new_object[new_key] = val;
-                } else {
-                    new_object[new_key] = module.exports(val, hash_table);
-                }
+                new_object[new_key] = module.exports(val, hash_table);
             } else {
-                if (Array.isArray(val)) {
-                    new_object[new_key] = val;
-                } else {
-                    new_object[key] = module.exports(val, hash_table);
-                }
+                new_object[key] = module.exports(val, hash_table);
             }
         } else {
             if (new_key) {

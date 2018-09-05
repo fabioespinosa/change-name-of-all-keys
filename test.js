@@ -54,8 +54,21 @@ const resulting_object = {
     }
 };
 
-const obj = changeNameOfAllKeys(original_object_2, convertion_operator);
-console.log(obj);
+const resulting_object_2 = {
+    'Op.gt': 23,
+    'Op.and': [
+        {
+            'Op.gt': 44,
+            'Op.lt': 46,
+            'Op.or': {
+                'Op.like': 'bye',
+                'Op.notLike': 'hello'
+            }
+        },
+        { 'Op.like': '%hola%' },
+        { 'Op.like': '%hello' }
+    ]
+};
 
 test('change name to all attributes', t => {
     t.deepEqual(
@@ -66,7 +79,7 @@ test('change name to all attributes', t => {
 
 test('change name to all attributes including array', t => {
     t.deepEqual(
-        changeNameOfAllKeys(original_object, convertion_operator),
-        resulting_object
+        changeNameOfAllKeys(original_object_2, convertion_operator),
+        resulting_object_2
     );
 });
